@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}{{post[2]}}{% endblock %}
+{% block content %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/show_post.css') }}">
+
+
+    <div class="spacer"></div>
+    <div class="contain">
+        <div class="user_post">
+            <div class="info">
+                <h3 style="margin-bottom: 10px;"><b>Название: {{post[2] }}</b></h3>
+                <span><b>Опубликовано: {{post[4][:10]}}</b></span>
+                <span><b>Автор: {{ author }}</b></span>
+                {% if id == post[1] %}
+                <a href="{{ url_for('del_post', post_id=post[0]) }}" ><button class="delete">Удалить пост</button></a>
+                {% endif %}
+            </div>
+            <p>{{post[3]}}</p>
+        </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="comments_container">
+        <div class="info_comments" style="align-self: center;">
+            <h1>{{ 'Комментариев пока нет' if comments|length == 0 else 'Комментарии' }}</h1>
+        </div>
+        <div class="disgusting">
+            <form action="/show_post/{{ post[0] }}" method="POST">
+                <div class="comment_enter">
+                    <textarea name="comment" placeholder="Введите свой комментарий"></textarea>
+                    <button>Отправить</button>
+                </div>
+            </form>
+            {% for comment in comments %}
+            <div class="comment">
+                <div class="info_comment">
+                    <span class="author">
+                        <p><b>@{{ comment[4] }}</b></p>
+                    </span>
+                    <span class="data">
+                        <p><b>{{ comment[3] }}</b></p>
+                    </span>
+                </div>
+                <div class="text">
+                    <p>{{ comment[2] }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="spacer"></div>
+
+{% endblock %}
