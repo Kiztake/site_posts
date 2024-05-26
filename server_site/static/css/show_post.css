@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contain {
+    min-width: 40%;
+    max-width: 70%;
+    background-color: rgba(0, 0, 0, 0.199);
+    border-radius: 15px;
+    min-height: 300px;
+}
+
+.contain .user_post{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #fff;
+}
+
+.delete{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 110px;
+    height: 23px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.delete:hover {
+    background-color: red;
+}
+
+.contain .user_post .info {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-top: 25px;
+    padding: 15px 5px 15px 8px;
+    min-height: 110px;
+    width: 100%;
+    border-bottom: 3px solid black;
+    background-color: #ffffff56;
+    border-radius: 15px 15px 0 0;
+    color: black;
+    position: relative;
+}
+
+.contain p {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    word-break: break-all;
+}
+
+.spacer {
+    width: 100%;
+    height: 100px;
+}
+
+.comments_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.comment {
+    width: 90%;
+    word-break: break-all;
+    min-height: 150px;
+    margin-top: 30px;
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+.info_comment {
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.disgusting {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.226);
+    padding: 15px;
+}
+
+.disgusting form {
+    background: white;
+    border: none;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;   
+    margin-left: 30px;
+    margin-top: 30px; 
+    min-height: 100px;
+}
+
+.disgusting form textarea {
+    border: none;
+    resize: vertical;
+    min-height: 1.5rem;
+    height: 1.5rem;
+    width: 100%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.171);
+    overflow: hidden;
+}
+
+.disgusting form button {
+    width: 150px;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.disgusting form textarea:focus {
+    outline: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.993);
+}
+
+.disgusting form .comment_enter{
+    width: 100%;
+    height: 100%;
+    padding: 15px
+}

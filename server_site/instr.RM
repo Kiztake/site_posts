@@ -1,0 +1,28 @@
+Структура проекта:
+
+PROJECT
+|__static
+|__templates
+|_main.py
+|_db
+
+! Зависимости !
+pip install Flask
+
+MVP (МИНИМАЛЬНОЕ ПРИЛОЖЕНИЕ(развернуть сервер))
+main.py
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Server is running'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+! Создать генератор паролей !
+! Создать отдельную папку проекта !
+! Создать в папке templates два шаблона !
+! Страница с выбором параметров для пароля !

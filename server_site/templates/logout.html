@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+    
+    <form action="/logout" method="POST">
+        <h1>Авторизация</h1>
+        <input type="text" name="login" placeholder="Введите логин">
+        <input type="password" name="password" placeholder="Введите пароль">
+        <button type="submit">Отправить</button>
+        <a href="/reg" style="    text-decoration: none;
+        color: #fff;
+        position: absolute;
+        bottom: 10px;
+        right: 5px;">Ещё нет аккаунта? Зарегестрироваться</a>
+        <h5 style="margin-bottom: 40px;">{{ error }}</h5>
+    </form>
+{% endblock %}
